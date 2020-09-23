@@ -16,24 +16,22 @@ import java.time.LocalDateTime;
 @Entity
 public class Movimentacao {
 
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @EqualsAndHashCode
-    @Embeddable
-    public  class  MovimentacaoId implements Serializable {
-        private long idMovimento;
-        private long idUsuario;
-    }
-    @Id
-    @EmbeddedId
-    private MovimentacaoId movimentacaoId;
-    private LocalDateTime dataEntrada;
-    private LocalDateTime dataSaida;
-    private BigDecimal periodo;
-    @ManyToOne
-    private Ocorrencia ocorrencia;
-    @ManyToOne
-    private Calendario calendario;
-
-
+        @AllArgsConstructor
+        @NoArgsConstructor
+        @EqualsAndHashCode
+        @Embeddable
+        public  class  MovimentacaoId implements Serializable{
+            private long idMovimento;
+            private long idUsuario;
+        }
+        @Id
+        @EmbeddedId
+        private MovimentacaoId movimentacaoId;
+        private LocalDateTime dataEntrada;
+        private LocalDateTime dataSaida;
+        private BigDecimal periodo;
+        @ManyToOne
+        private Ocorrencia ocorrencia;
+        @ManyToOne
+        private Calendario calendario;
 }
